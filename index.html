@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radon Software Foundation</title>
+    <link rel="shortcut icon" href="./static/favicon.ico" type="image/x-icon">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+      }
+
+      :root {
+        --primary-color: #1e3799f8;
+        --secondary-color: #0c2461dc;
+        --text-color: #fff;
+      }
+
+      nav {
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        padding: 10px;
+        display: inline-flex;
+        width: 100%;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: inline-flex;
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 8px;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin-right: 20px;
+        padding: 10px;
+      }
+
+      .logo img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .logo img:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 5px;
+
+      }
+
+      nav ul li a:hover {
+        color: #fff;
+        text-decoration: none;
+        background-color: var(--secondary-color);
+      }
+
+      nav ul li a:active {
+        color: #fff;
+        text-decoration: underline;
+      }
+
+      nav ul li a:visited {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      nav ul li a:focus {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .container {
+        background: rgb(30, 55, 153);
+        background: linear-gradient(90deg, rgba(30, 55, 153, 1) 50%, rgba(12, 36, 97, 1) 100%);
+        color: var(--text-color);
+        width: 100vw;
+        height: 100%;
+      }
+
+      .header-img {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .container h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .container p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+
+      header {
+        width: 90%;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      footer {
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        padding: 10px;
+        text-align: center;
+      }
+
+      @media only screen and (max-width: 600px) {
+        nav ul li {
+          display: block;
+          margin-right: 0;
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <a href="/" class="logo">
+        <img src="./static/Rn.svg" alt="Radon Logo">
+      </a>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Docs</a></li>
+        <li><a href="#">Download</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <header>
+        <img src="./static/Rn.svg" alt="Site Logo" class="header-img">
+        <h1>The Radon Programming Language</h1>
+        <p>
+          Radon is a programming language that is designed to be easy to learn and use. It is a high-level language
+          intended to be used for general purpose programming. It is designed to be easy to learn and use, while still
+          being powerful enough to be used for most tasks. Some of the features of Radon include:
+        </p>
+
+        <ul>
+          <li>
+            A simple syntax that is easy to learn and use
+          </li>
+          <li>
+            Dynamic typing so that you don't have to worry about types
+          </li>
+          <li>
+            Powerful standard library that makes it easy to do common tasks (On the way)
+          </li>
+          <li>
+            Easy to use package manager that makes it easy to install packages (Future feature)
+          </li>
+        </ul>
+      </header>
+    </div>
+
+    <footer>
+      <p>Radon Software Foundation &copy; 2023</p>
+    </footer>
+  </body>
+
+</html>
