@@ -42,13 +42,16 @@
   </head>
 
   <body>
+    <div class="loader-wrapper">
+      <span class="loader"></span>
+    </div>
     <nav>
       <a href="/" class="logo">
         <img src="./static/Rn.svg" alt="Radon Logo">
       </a>
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="#">Docs</a></li>
+        <li><a href="#docs">Docs</a></li>
         <li><a href="#download">Download</a></li>
       </ul>
     </nav>
@@ -158,6 +161,7 @@
     <div class="hr"></div>
 
     <div class="box">
+      <h1>Project Structure</h1>
       <code>
         <pre>
 radon
@@ -200,7 +204,7 @@ radon
 
     <div class="hr"></div>
 
-    <div class="box">
+    <div class="box" id="docs">
       <h1>Syntax</h1>
 
       <code>
@@ -375,6 +379,12 @@ arr_slice(array, start, end)
       </p>
     </footer>
 
+    <script>
+      window.addEventListener('load', () => {
+        const loader = document.querySelector('.loader-wrapper');
+        loader.className += ' hidden';
+      });
+    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQVZ8DQMSF"></script>
