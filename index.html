@@ -4,276 +4,40 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radon Software Foundation</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="imagetoolbar" content="false">
+
+    <!-- google meta tags  -->
+    <meta name="description"
+      content="Radon is a programming language that is designed to be easy to learn and use. It is a high-level language intended to be used for general purpose programming. It is designed to be easy to learn and use, while still being powerful enough to be used for most tasks. Some of the features of Radon include: A simple syntax that is easy to learn and use, Dynamic typing so that you don't have to worry about types, Powerful standard library that makes it easy to do common tasks (On the way), Easy to use package manager that makes it easy to install packages (Future feature)">
+    <meta name="keywords"
+      content="radon, radon programming language, radon language, radon programming, radon programming language tutorial, radon programming language download, radon programming language github, radon programming language examples, radon programming language documentation, radon programming language tutorial pdf, radon programming language tutorial for beginners, radon programming language tutorial pdf download, radon programming language tutorial point, radon programming language tutorialspoint, radon programming language tutorial youtube, radon programming language tutorial for beginners pdf, radon programming language tutorial for beginners youtube, radon programming language tutorial for beginners pdf download, radon programming language tutorial for beginners point, radon programming language tutorial for beginners tutorialspoint, radon programming language tutorial for beginners youtube video, radon programming language tutorial for beginners youtube channel, radon programming language tutorial for beginners youtube video download">
+    <meta name="author" content="Md. Almas Ali">
+    <meta name="robots" content="index, follow">
+
+    <!-- facebook meta tags  -->
+    <meta property="og:title" content="The Radon Programming Language">
+    <meta property="og:description"
+      content="Radon is a programming language that is designed to be easy to learn and use. It is a high-level language intended to be used for general purpose programming. It is designed to be easy to learn and use, while still being powerful enough to be used for most tasks. Some of the features of Radon include: A simple syntax that is easy to learn and use, Dynamic typing so that you don't have to worry about types, Powerful standard library that makes it easy to do common tasks (On the way), Easy to use package manager that makes it easy to install packages (Future feature)">
+    <meta property="og:image" content="./static/Rn.png">
+    <meta property="og:url" content="https://radon-project.github.io/">
+    <meta property="og:site_name" content="The Radon Programming Language">
+    <meta property="og:type" content="website">
+
+    <!-- twitter meta tags  -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@almasali22">
+    <meta name="twitter:creator" content="@almasali22">
+    <meta name="twitter:title" content="The Radon Programming Language">
+    <meta name="twitter:description"
+      content="Radon is a programming language that is designed to be easy to learn and use. It is a high-level language intended to be used for general purpose programming. It is designed to be easy to learn and use, while still being powerful enough to be used for most tasks. Some of the features of Radon include: A simple syntax that is easy to learn and use, Dynamic typing so that you don't have to worry about types, Powerful standard library that makes it easy to do common tasks (On the way), Easy to use package manager that makes it easy to install packages (Future feature)">
+    <meta name="twitter:image" content="./static/Rn.png">
+
+    <title>The Radon Programming Language</title>
     <link rel="shortcut icon" href="./static/favicon.ico" type="image/x-icon">
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-      }
-
-      :root {
-        --primary-color: #1e3799f8;
-        --secondary-color: #0c2461dc;
-        --text-color: #fff;
-      }
-
-      nav {
-        background-color: var(--primary-color);
-        color: var(--text-color);
-        display: inline-flex;
-        width: 100%;
-      }
-
-      nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: inline-flex;
-        width: 100%;
-        justify-content: flex-end;
-        margin-top: 12px;
-      }
-
-      nav ul li {
-        display: inline-block;
-        margin-right: 20px;
-        padding: 10px;
-      }
-
-      .logo img {
-        width: 50px;
-        height: 50px;
-        margin: 2px 20px;
-        padding: 4px;
-      }
-
-      .logo img:hover {
-        cursor: pointer;
-        opacity: 0.8;
-      }
-
-      nav ul li a {
-        color: #fff;
-        text-decoration: none;
-        padding: 10px;
-        border-radius: 5px;
-
-      }
-
-      nav ul li a:hover {
-        color: #fff;
-        text-decoration: none;
-        background-color: var(--secondary-color);
-      }
-
-      nav ul li a:active {
-        color: #fff;
-        text-decoration: underline;
-      }
-
-      nav ul li a:visited {
-        color: #fff;
-        text-decoration: none;
-      }
-
-      nav ul li a:focus {
-        color: #fff;
-        text-decoration: none;
-      }
-
-      .container {
-        background: rgb(30, 55, 153);
-        background: linear-gradient(90deg, rgba(26, 54, 167, 0.904) 50%, rgba(12, 36, 97, 1) 100%);
-        color: var(--text-color);
-        width: 100%;
-        height: 100%;
-      }
-
-      .box {
-        width: 90%;
-        margin: 0 auto;
-      }
-
-      .header-img {
-        width: 200px;
-        height: 200px;
-        margin: 0 auto;
-        display: block;
-      }
-
-      .container h1 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-      }
-
-      .container p {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-      }
-
-      .container ul {
-        list-style: circle;
-        margin: 0;
-        padding: 5px;
-      }
-
-      .container ul li {
-        margin-bottom: 10px;
-      }
-
-      header {
-        width: 90%;
-        margin: 0 auto;
-        padding: 20px;
-      }
-
-      .download-menu {
-        width: 90%;
-        margin: 0 auto;
-        padding: 20px;
-      }
-
-      .download-menu h2 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-      }
-
-      .download-menu p {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-
-      table tr th {
-        padding: 10px;
-        border: 1px solid var(--text-color);
-        text-align: left;
-      }
-
-      table th {
-        background-color: var(--primary-color);
-        color: var(--text-color);
-      }
-
-      table tr:nth-child(even) {
-        background-color: #f2f2f2;
-      }
-
-      table tr td {
-        padding: 10px;
-        border: 1px solid var(--text-color);
-      }
-
-      table tr td a {
-        color: #426BB2;
-        text-decoration: none;
-      }
-
-      table tr td a:hover {
-        color: #000;
-        text-decoration: none;
-      }
-
-      table tr td a:active {
-        color: #000;
-        text-decoration: underline;
-      }
-
-      table tr td a:visited {
-        color: #000;
-        text-decoration: none;
-      }
-
-      table tr td a:focus {
-        color: #000;
-        text-decoration: none;
-      }
-
-      .hr {
-        background: #223faf;
-        padding: 2px;
-        margin: 10px 5%;
-      }
-
-      code {
-        background-color: #f2f2f2;
-        padding: 10px;
-        border-radius: 5px;
-        display: block;
-        margin: 0 auto;
-        margin-bottom: 20px;
-      }
-
-      pre {
-        font-family: monospace;
-        /* font-size: 14px; */
-        line-height: 1.6;
-      }
-
-      .code-block {
-        background-color: #f0f0f0;
-        padding: 5px;
-        border-radius: 5px;
-        font-family: monospace;
-      }
-
-      footer {
-        background-color: var(--primary-color);
-        color: var(--text-color);
-        padding: 10px;
-        text-align: center;
-      }
-
-      footer p {
-        font-size: 1rem;
-        margin-bottom: 5px;
-      }
-
-      footer p a {
-        color: var(--text-color);
-        text-decoration: none;
-        font-weight: 600;
-        font-style: italic;
-      }
-
-      footer p a:hover {
-        color: var(--text-color);
-        text-decoration: underline;
-      }
-
-      @media only screen and (max-width: 600px) {
-        nav ul li {
-          display: block;
-          margin-right: 0;
-          padding: 10px;
-        }
-      }
-
-      @media only screen and (max-width: 600px) {
-        .header-img {
-          width: 100px;
-          height: 100px;
-          margin: 0 auto;
-          display: block;
-        }
-
-        .container h1 {
-          font-size: 1.5rem;
-          margin-bottom: 20px;
-        }
-
-        .container p {
-          font-size: 1rem;
-          margin-bottom: 20px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="./static/main.css">
   </head>
 
   <body>
@@ -368,7 +132,13 @@
     <div class="box">
       <h1>Getting Started</h1>
       <p>
-        After downloading Radon, you can run it by double clicking on the executable. This will open the Radon REPL (Read Evaluate Print Loop). You can type in code and it will be executed immediately. You can also run a Radon file by typing <span class="code-block">radon filename.rn</span> in the command line. This will run the code in the file. Before you do that though, you need to make sure that Radon is in your PATH variable. If you are on Windows, you can do this by going to Control Panel > System > Advanced System Settings > Environment Variables. Then, you need to add the path to the Radon executable to the PATH variable. If you are on Linux, you can do this by adding the path to the Radon executable to the PATH variable in your .bashrc file.
+        After downloading Radon, you can run it by double clicking on the executable. This will open the Radon REPL
+        (Read Evaluate Print Loop). You can type in code and it will be executed immediately. You can also run a Radon
+        file by typing <span class="code-block">radon filename.rn</span> in the command line. This will run the code in
+        the file. Before you do that though, you need to make sure that Radon is in your PATH variable. If you are on
+        Windows, you can do this by going to Control Panel > System > Advanced System Settings > Environment Variables.
+        Then, you need to add the path to the Radon executable to the PATH variable. If you are on Linux, you can do
+        this by adding the path to the Radon executable to the PATH variable in your .bashrc file.
       </p>
     </div>
 
@@ -599,9 +369,22 @@ arr_slice(array, start, end)
     <footer>
       <p>Radon Software Foundation &copy; 2023</p>
       <p>
-        Author : <a href="https://almasali.net" target="_blank" title="A passionate software engineer from Bangladesh.">Md. Almas Ali</a>
+        Author : <a href="https://almasali.net" target="_blank"
+          title="A passionate software engineer from Bangladesh.">Md. Almas Ali</a>
       </p>
     </footer>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQVZ8DQMSF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', 'G-EQVZ8DQMSF');
+    </script>
+
   </body>
 
 </html>
