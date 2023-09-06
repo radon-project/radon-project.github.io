@@ -22,7 +22,6 @@
       nav {
         background-color: var(--primary-color);
         color: var(--text-color);
-        padding: 10px;
         display: inline-flex;
         width: 100%;
       }
@@ -34,7 +33,7 @@
         display: inline-flex;
         width: 100%;
         justify-content: flex-end;
-        margin-top: 8px;
+        margin-top: 12px;
       }
 
       nav ul li {
@@ -46,6 +45,8 @@
       .logo img {
         width: 50px;
         height: 50px;
+        margin: 2px 20px;
+        padding: 4px;
       }
 
       .logo img:hover {
@@ -84,10 +85,15 @@
 
       .container {
         background: rgb(30, 55, 153);
-        background: linear-gradient(90deg, rgba(30, 55, 153, 1) 50%, rgba(12, 36, 97, 1) 100%);
+        background: linear-gradient(90deg, rgba(26, 54, 167, 0.904) 50%, rgba(12, 36, 97, 1) 100%);
         color: var(--text-color);
-        width: 100vw;
+        width: 100%;
         height: 100%;
+      }
+
+      .box {
+        width: 90%;
+        margin: 0 auto;
       }
 
       .header-img {
@@ -107,10 +113,114 @@
         margin-bottom: 20px;
       }
 
+      .container ul {
+        list-style: circle;
+        margin: 0;
+        padding: 5px;
+      }
+
+      .container ul li {
+        margin-bottom: 10px;
+      }
+
       header {
         width: 90%;
         margin: 0 auto;
         padding: 20px;
+      }
+
+      .download-menu {
+        width: 90%;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .download-menu h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .download-menu p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      table tr th {
+        padding: 10px;
+        border: 1px solid var(--text-color);
+        text-align: left;
+      }
+
+      table th {
+        background-color: var(--primary-color);
+        color: var(--text-color);
+      }
+
+      table tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      table tr td {
+        padding: 10px;
+        border: 1px solid var(--text-color);
+      }
+
+      table tr td a {
+        color: #426BB2;
+        text-decoration: none;
+      }
+
+      table tr td a:hover {
+        color: #000;
+        text-decoration: none;
+      }
+
+      table tr td a:active {
+        color: #000;
+        text-decoration: underline;
+      }
+
+      table tr td a:visited {
+        color: #000;
+        text-decoration: none;
+      }
+
+      table tr td a:focus {
+        color: #000;
+        text-decoration: none;
+      }
+
+      .hr {
+        background: #223faf;
+        padding: 2px;
+        margin: 10px 5%;
+      }
+
+      code {
+        background-color: #f2f2f2;
+        padding: 10px;
+        border-radius: 5px;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 20px;
+      }
+
+      pre {
+        font-family: monospace;
+        /* font-size: 14px; */
+        line-height: 1.6;
+      }
+
+      .code-block {
+        background-color: #f0f0f0;
+        padding: 5px;
+        border-radius: 5px;
+        font-family: monospace;
       }
 
       footer {
@@ -120,11 +230,47 @@
         text-align: center;
       }
 
+      footer p {
+        font-size: 1rem;
+        margin-bottom: 5px;
+      }
+
+      footer p a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      footer p a:hover {
+        color: var(--text-color);
+        text-decoration: underline;
+      }
+
       @media only screen and (max-width: 600px) {
         nav ul li {
           display: block;
           margin-right: 0;
           padding: 10px;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        .header-img {
+          width: 100px;
+          height: 100px;
+          margin: 0 auto;
+          display: block;
+        }
+
+        .container h1 {
+          font-size: 1.5rem;
+          margin-bottom: 20px;
+        }
+
+        .container p {
+          font-size: 1rem;
+          margin-bottom: 20px;
         }
       }
     </style>
@@ -138,13 +284,13 @@
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="#">Docs</a></li>
-        <li><a href="#">Download</a></li>
+        <li><a href="#download">Download</a></li>
       </ul>
     </nav>
 
     <div class="container">
       <header>
-        <img src="./static/Rn.svg" alt="Site Logo" class="header-img">
+        <img src="./static/Rn.png" alt="Site Logo" class="header-img">
         <h1>The Radon Programming Language</h1>
         <p>
           Radon is a programming language that is designed to be easy to learn and use. It is a high-level language
@@ -167,10 +313,294 @@
           </li>
         </ul>
       </header>
+
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="download-menu" id="download">
+      <h2>Download</h2>
+      <p>Download the latest version of Radon</p>
+      <table>
+        <tr>
+          <th>Release version</th>
+          <th>Release date</th>
+          <th>Platform</th>
+          <th>
+            Click for more
+          </th>
+        </tr>
+        <tr>
+          <td>
+            Radon 0.0.1a2
+          </td>
+          <td>
+            31-08-2023
+          </td>
+          <td>
+            <a href="https://github.com/radon-project/radon/releases/download/v0.0.1a2/radon-0.0.1-a2.exe">Windows</a> |
+            <a href="https://github.com/radon-project/radon/archive/refs/tags/v0.0.1a2.tar.gz">Linux/Source</a>
+          </td>
+          <td>
+            <a href="#">Release Notes</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Radon 0.0.1a0
+          </td>
+          <td>
+            05-07-2023
+          </td>
+          <td>
+            <a href="https://github.com/radon-project/radon/releases/download/v0.0.1a0/radon-0.0.1.exe">Windows</a> |
+            <a href="https://github.com/radon-project/radon/archive/refs/tags/v0.0.1a0.tar.gz">Linux/Source</a>
+          </td>
+          <td>
+            <a href="#">Release Notes</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="box">
+      <h1>Getting Started</h1>
+      <p>
+        After downloading Radon, you can run it by double clicking on the executable. This will open the Radon REPL (Read Evaluate Print Loop). You can type in code and it will be executed immediately. You can also run a Radon file by typing <span class="code-block">radon filename.rn</span> in the command line. This will run the code in the file. Before you do that though, you need to make sure that Radon is in your PATH variable. If you are on Windows, you can do this by going to Control Panel > System > Advanced System Settings > Environment Variables. Then, you need to add the path to the Radon executable to the PATH variable. If you are on Linux, you can do this by adding the path to the Radon executable to the PATH variable in your .bashrc file.
+      </p>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="box">
+      <h1>
+        Standard Library
+      </h1>
+      <p>
+        We are currently working on the standard library. We need contributors to help us build the standard library. If
+        you are interested, please make contributions to the <span class="code-block">stdlib</span> directory.
+      </p>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="box">
+      <code>
+        <pre>
+radon
+├── core
+│   ├── builtin_funcs.py
+│   ├── datatypes.py
+│   ├── errors.py
+│   ├── __init__.py
+│   ├── interpreter.py
+│   ├── lexer.py
+│   ├── nodes.py
+│   ├── parser.py
+│   └── tokens.py
+├── examples
+│   ├── args_test.rn
+│   ├── arrays.rn
+│   ├── classes.rn
+│   ├── functions.rn
+│   ├── import_test.rn
+│   ├── new_syntax.rn
+│   ├── python_api.rn
+│   ├── simple.rn
+│   └── syntax.rn
+├── Makefile
+├── radon.png
+├── radon.py
+├── README.md
+├── stdlib
+│   ├── Argparser.rn
+│   ├── Array.rn
+│   ├── Math.rn
+│   ├── String.rn
+│   ├── System.rn
+│   └── Winlib.rn
+├── tests
+└── TODO.md
+        </pre>
+      </code>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="box">
+      <h1>Syntax</h1>
+
+      <code>
+<pre>
+# This is a comment
+
+# Arithmetic operators
+# + - Addition
+# - - Subtraction
+# * - Multiplication
+# / - Division
+# % - Modulus
+# ^ - Exponentiation
+
+# Comparison operators
+# == - Equal to
+# != - Not equal to
+# > - Greater than
+# < - Less than
+# >= - Greater than or equal to
+# <= - Less than or equal to
+
+# Logical operators
+# and - Logical and
+# or - Logical or
+# not - Logical not
+
+# Assignment operators (Development)
+# = - Assign
+# += - Add and assign
+# -= - Subtract and assign
+# *= - Multiply and assign
+# /= - Divide and assign
+# %= - Modulus and assign
+# ^= - Exponentiation and assign
+
+# Variable definition
+var a = 10
+var b = 20
+print(a + b) # 30
+
+var c = "Hello"
+var d = "World"
+print(c + " " + d) # Hello World
+
+# Conditional statement
+if a > b {
+    print("a is greater than b")
+} elif a < b {
+    print("a is less than b")
+} else {
+    print("a is equal to b")
+}
+
+# For loop
+var x = 9 # Multiplication table of 9
+
+for i = 1 to 11 {
+    print(str(x) + " X " + str(i) + " = " + str(x * i))
+}
+
+# While loop
+while x > 0 {
+    print(x)
+    var x = x - 1
+}
+
+# Function definition
+fun add(a, b) {
+    return a + b
+}
+
+print(add(10, 20)) # 30
+
+# Anonymous function
+var sub = fun (a, b) {
+    return a - b
+}
+
+print(sub(20, 10)) # 10
+
+# Single line function
+fun mul(a, b) -> a * b
+print(mul(10, 20)) # 200
+
+# Class definition
+class Person {
+    # Constructor
+    fun Person(name, age) {
+        var this.name = name
+        var this.age = age
+    }
+
+    fun get_name() {
+        return this.name
+    }
+
+    fun get_age() {
+        return this.age
+    }
+}
+
+# Use a class
+var person = Person("Almas", 21)
+var details = "Name is : " + person.get_name() + ", Age : " + str(person.get_age())
+print(details)
+
+# Include statement
+include Math # to include math library
+include "examples/simple.rn" # to use a path
+
+# builtin functions
+
+# Utility methods
+cls()
+clear()
+exit()
+
+# same as include statement
+require()
+
+# Command line arguments
+sys_args()
+
+# API methods
+pyapi(string)
+
+# Typecase methods
+int()
+float()
+str()
+bool()
+type()
+
+# Type checker methods
+is_num()
+is_int()
+is_float()
+is_str()
+is_bool()
+is_array()
+is_fun()
+
+# String methods
+str_len()
+str_find(string, index)
+str_slice(string, start, end)
+
+# I/O methods
+print()
+print_ret()
+input()
+input_int()
+
+# Array methods
+arr_len()
+arr_push(array, item)
+arr_pop(array, index)
+arr_append(array, item)
+arr_extend(array1, array2)
+arr_find(array, index)
+arr_slice(array, start, end)
+</pre>
+      </code>
     </div>
 
     <footer>
       <p>Radon Software Foundation &copy; 2023</p>
+      <p>
+        Author : <a href="https://almasali.net" target="_blank" title="A passionate software engineer from Bangladesh.">Md. Almas Ali</a>
+      </p>
     </footer>
   </body>
 
