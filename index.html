@@ -1,401 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="HandheldFriendly" content="True">
     <meta name="format-detection" content="telephone=no">
-    <meta http-equiv="cleartype" content="on">
-    <meta http-equiv="imagetoolbar" content="false">
-
-    <!-- google meta tags  -->
-    <meta name="description"
-      content="Radon is a programming language that is designed to be easy to learn and use. It is a high-level language intended to be used for general purpose programming. It is designed to be easy to learn and use, while still being powerful enough to be used for most tasks. Some of the features of Radon include: A simple syntax that is easy to learn and use, Dynamic typing so that you don't have to worry about types, Powerful standard library that makes it easy to do common tasks (On the way), Easy to use package manager that makes it easy to install packages (Future feature)">
-    <meta name="keywords"
-      content="radon, radon programming language, radon language, radon programming, radon programming language tutorial, radon programming language download, radon programming language github, radon programming language examples, radon programming language documentation, radon programming language tutorial pdf, radon programming language tutorial for beginners, radon programming language tutorial pdf download, radon programming language tutorial point, radon programming language tutorialspoint, radon programming language tutorial youtube, radon programming language tutorial for beginners pdf, radon programming language tutorial for beginners youtube, radon programming language tutorial for beginners pdf download, radon programming language tutorial for beginners point, radon programming language tutorial for beginners tutorialspoint, radon programming language tutorial for beginners youtube video, radon programming language tutorial for beginners youtube channel, radon programming language tutorial for beginners youtube video download">
+    <meta name="description" content="Radon is a source-first programming language with its own REPL, script runner, built-in functions, and standard library modules written in Radon.">
+    <meta name="keywords" content="radon, programming language, repl, interpreter, radon language, radon docs, radon github">
     <meta name="author" content="Md. Almas Ali">
     <meta name="robots" content="index, follow">
-    <meta name="google-site-verification" content="zTEe-bypjwy2g3fTznxeCaJr54OYPmawh_Njmj3gB1o" />
-
-    <!-- facebook meta tags  -->
+    <meta name="google-site-verification" content="zTEe-bypjwy2g3fTznxeCaJr54OYPmawh_Njmj3gB1o">
     <meta property="og:title" content="The Radon Programming Language">
-    <meta property="og:description"
-      content="Radon is a programming language that is designed to be easy to learn and use. It is a high-level language intended to be used for general purpose programming. It is designed to be easy to learn and use, while still being powerful enough to be used for most tasks. Some of the features of Radon include: A simple syntax that is easy to learn and use, Dynamic typing so that you don't have to worry about types, Powerful standard library that makes it easy to do common tasks (On the way), Easy to use package manager that makes it easy to install packages (Future feature)">
+    <meta property="og:description" content="Run Radon from source, use the REPL, execute .rn files, and explore the standard library and built-ins from the current repository.">
     <meta property="og:image" content="./static/Rn.png">
     <meta property="og:url" content="https://radon-project.github.io/">
     <meta property="og:site_name" content="The Radon Programming Language">
     <meta property="og:type" content="website">
-
-    <!-- twitter meta tags  -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@almasali22">
     <meta name="twitter:creator" content="@almasali22">
     <meta name="twitter:title" content="The Radon Programming Language">
-    <meta name="twitter:description"
-      content="Radon is a programming language that is designed to be easy to learn and use. It is a high-level language intended to be used for general purpose programming. It is designed to be easy to learn and use, while still being powerful enough to be used for most tasks. Some of the features of Radon include: A simple syntax that is easy to learn and use, Dynamic typing so that you don't have to worry about types, Powerful standard library that makes it easy to do common tasks (On the way), Easy to use package manager that makes it easy to install packages (Future feature)">
+    <meta name="twitter:description" content="Source-first installation, REPL usage, standard library modules, and current Radon examples.">
     <meta name="twitter:image" content="./static/Rn.png">
 
     <title>The Radon Programming Language</title>
     <link rel="shortcut icon" href="./static/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./static/main.css?v=1.0.2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./static/main.css?v=3.0.0">
   </head>
-
   <body>
-    <div class="loader-wrapper">
-      <span class="loader"></span>
-    </div>
-    <nav>
-      <a href="/" class="logo">
-        <img src="./static/Rn.svg" alt="Radon Logo">
-      </a>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/docs">Docs</a></li>
-        <li><a href="#download">Download</a></li>
-      </ul>
-    </nav>
-
-    <div class="container">
-      <header>
-        <img src="./static/Rn.png" alt="Site Logo" class="header-img">
-        <h1>The Radon Programming Language</h1>
-        <p>
-          Radon is a programming language that is designed to be easy to learn and use. It is a high-level language
-          intended to be used for general purpose programming. It is designed to be easy to learn and use, while still
-          being powerful enough to be used for most tasks. Some of the features of Radon include:
-        </p>
-
-        <ul>
-          <li>
-            A simple syntax that is easy to learn and use
-          </li>
-          <li>
-            Dynamic typing so that you don't have to worry about types
-          </li>
-          <li>
-            Powerful standard library that makes it easy to do common tasks (On the way)
-          </li>
-          <li>
-            Easy to use package manager that makes it easy to install packages (Future feature)
-          </li>
-        </ul>
+    <div class="page-shell">
+      <header class="site-header">
+        <a href="/" class="brand" aria-label="Radon home">
+          <img src="./static/Rn.svg" alt="Radon logo">
+          <span>Radon</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#syntax">Syntax</a>
+          <a href="#features">Features</a>
+          <a href="#modules">Modules</a>
+          <a href="#contribute">Contribute</a>
+          <a href="https://discord.gg/C2aVE9ya6N" target="_blank" rel="noopener" class="nav-discord"><svg class="discord-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>Discord</a>
+        </nav>
       </header>
 
-    </div>
+      <main>
+        <section class="hero" id="start">
+          <div class="hero-copy">
+            <p class="eyebrow">Fast, clean, Python-powered</p>
+            <h1>The Radon Programming Language</h1>
+            <p class="lead">
+              Radon is a source-first programming language with its own REPL, script runner,
+              built-in runtime helpers, and standard library modules written in Radon.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="/docs">Open Documentation</a>
+              <a class="button button-secondary" href="https://github.com/radon-project/radon">View Repository</a>
+            </div>
+            <ul class="hero-points">
+              <li>Run the REPL with <code>python radon.py</code></li>
+              <li>Execute files with <code>python radon.py program.rn</code></li>
+              <li>Use modules, classes, arrays, hash maps, and Python interop</li>
+            </ul>
+          </div>
+          <div class="hero-art">
+            <div class="logo-orbit">
+              <div class="rn-emblem" aria-label="Radon emblem">Rn</div>
+              <span class="orbit orbit-a"></span>
+              <span class="orbit orbit-b"></span>
+              <span class="version-badge">0.0.1a2</span>
+            </div>
+          </div>
+        </section>
 
-    <div class="hr"></div>
+        <section class="panel command-panel">
+          <div>
+            <p class="eyebrow">Source install</p>
+            <h2>Get running in under a minute</h2>
+            <p>
+              The current repository is designed to run directly from source. Clone the repo,
+              start the interpreter, and then execute examples or your own <code>.rn</code> files.
+            </p>
+          </div>
+          <pre><code class="language-bash">git clone https://github.com/radon-project/radon.git
+cd radon
+python radon.py
+python radon.py examples/simple.rn</code></pre>
+        </section>
 
-    <div class="download-menu" id="download">
-      <h2>Download</h2>
-      <p>Download the latest version of Radon</p>
-      <table>
-        <tr>
-          <th>Release version</th>
-          <th>Release date</th>
-          <th>Platform</th>
-          <th>
-            Click for more
-          </th>
-        </tr>
-        <tr>
-          <td>
-            Radon 0.0.1a2
-          </td>
-          <td>
-            31-08-2023
-          </td>
-          <td>
-            <a href="https://github.com/radon-project/radon/releases/download/v0.0.1a2/radon-0.0.1-a2.exe">Windows</a> |
-            <a href="https://github.com/radon-project/radon/archive/refs/tags/v0.0.1a2.tar.gz">Linux/Source</a>
-          </td>
-          <td>
-            <a href="#">Release Notes</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Radon 0.0.1a0
-          </td>
-          <td>
-            05-07-2023
-          </td>
-          <td>
-            <a href="https://github.com/radon-project/radon/releases/download/v0.0.1a0/radon-0.0.1.exe">Windows</a> |
-            <a href="https://github.com/radon-project/radon/archive/refs/tags/v0.0.1a0.tar.gz">Linux/Source</a>
-          </td>
-          <td>
-            <a href="#">Release Notes</a>
-          </td>
-        </tr>
-      </table>
-    </div>
+        <section class="panel syntax-tour" id="syntax">
+          <div class="section-heading">
+            <p class="eyebrow">Language tour</p>
+            <h2>Explore the syntax</h2>
+          </div>
+          <div class="tour-tabs" role="tablist">
+            <button class="tour-tab active" role="tab" data-tab="classes">Classes</button>
+            <button class="tour-tab" role="tab" data-tab="loops">Loops</button>
+            <button class="tour-tab" role="tab" data-tab="errors">Error handling</button>
+            <button class="tour-tab" role="tab" data-tab="collections">Arrays &amp; maps</button>
+            <button class="tour-tab" role="tab" data-tab="pyapi">Python interop</button>
+          </div>
+          <div class="tour-panels">
+            <div class="tour-panel active" id="tab-classes">
+              <pre><code class="language-radon">import io
 
-    <div class="hr"></div>
-
-    <div class="box">
-      <h1>Getting Started</h1>
-      <p>
-        After downloading Radon, you can run it by double clicking on the executable. This will open the Radon REPL
-        (Read Evaluate Print Loop). You can type in code and it will be executed immediately. You can also run a Radon
-        file by typing <span class="code-block">radon filename.rn</span> in the command line. This will run the code in
-        the file. Before you do that though, you need to make sure that Radon is in your PATH variable. If you are on
-        Windows, you can do this by going to Control Panel > System > Advanced System Settings > Environment Variables.
-        Then, you need to add the path to the Radon executable to the PATH variable. If you are on Linux, you can do
-        this by adding the path to the Radon executable to the PATH variable in your .bashrc file.
-      </p>
-    </div>
-
-    <div class="hr"></div>
-
-    <div class="box">
-      <h1>
-        Standard Library
-      </h1>
-      <p>
-        We are currently working on the standard library. We need contributors to help us build the standard library. If
-        you are interested, please make contributions to the <span class="code-block">stdlib</span> directory.
-      </p>
-    </div>
-
-    <div class="hr"></div>
-
-    <div class="box">
-      <h1>Project Structure</h1>
-      <code>
-        <pre>
-radon
-├── core
-│   ├── builtin_funcs.py
-│   ├── datatypes.py
-│   ├── errors.py
-│   ├── __init__.py
-│   ├── interpreter.py
-│   ├── lexer.py
-│   ├── nodes.py
-│   ├── parser.py
-│   └── tokens.py
-├── examples
-│   ├── args_test.rn
-│   ├── arrays.rn
-│   ├── classes.rn
-│   ├── functions.rn
-│   ├── import_test.rn
-│   ├── new_syntax.rn
-│   ├── python_api.rn
-│   ├── simple.rn
-│   └── syntax.rn
-├── Makefile
-├── radon.png
-├── radon.py
-├── README.md
-├── stdlib
-│   ├── Argparser.rn
-│   ├── Array.rn
-│   ├── Math.rn
-│   ├── String.rn
-│   ├── System.rn
-│   └── Winlib.rn
-├── tests
-└── TODO.md
-        </pre>
-      </code>
-    </div>
-
-    <div class="hr"></div>
-
-    <div class="box" id="docs">
-      <h1>Syntax</h1>
-
-      <code>
-<pre>
-# This is a comment
-
-# Arithmetic operators
-# + - Addition
-# - - Subtraction
-# * - Multiplication
-# / - Division
-# % - Modulus
-# ^ - Exponentiation
-
-# Comparison operators
-# == - Equal to
-# != - Not equal to
-# > - Greater than
-# < - Less than
-# >= - Greater than or equal to
-# <= - Less than or equal to
-
-# Logical operators
-# and - Logical and
-# or - Logical or
-# not - Logical not
-
-# Assignment operators (Development)
-# = - Assign
-# += - Add and assign
-# -= - Subtract and assign
-# *= - Multiply and assign
-# /= - Divide and assign
-# %= - Modulus and assign
-# ^= - Exponentiation and assign
-
-# Variable definition
-var a = 10
-var b = 20
-print(a + b) # 30
-
-var c = "Hello"
-var d = "World"
-print(c + " " + d) # Hello World
-
-# Conditional statement
-if a > b {
-    print("a is greater than b")
-} elif a < b {
-    print("a is less than b")
-} else {
-    print("a is equal to b")
-}
-
-# For loop
-var x = 9 # Multiplication table of 9
-
-for i = 1 to 11 {
-    print(str(x) + " X " + str(i) + " = " + str(x * i))
-}
-
-# While loop
-while x > 0 {
-    print(x)
-    var x = x - 1
-}
-
-# Function definition
-fun add(a, b) {
-    return a + b
-}
-
-print(add(10, 20)) # 30
-
-# Anonymous function
-var sub = fun (a, b) {
-    return a - b
-}
-
-print(sub(20, 10)) # 10
-
-# Single line function
-fun mul(a, b) -> a * b
-print(mul(10, 20)) # 200
-
-# Class definition
-class Person {
-    # Constructor
-    fun Person(name, age) {
-        var this.name = name
-        var this.age = age
+class Animal {
+    fun __constructor__(name, sound) {
+        this.name = name
+        this.sound = sound
     }
 
-    fun get_name() {
-        return this.name
+    fun speak() {
+        print(this.name + " says " + this.sound)
     }
 
-    fun get_age() {
-        return this.age
+    # Operator overloading
+    fun __add__(other) {
+        return Animal(this.name + "&" + other.name, "...")
     }
 }
 
-# Use a class
-var person = Person("Almas", 21)
-var details = "Name is : " + person.get_name() + ", Age : " + str(person.get_age())
-print(details)
+var dog = Animal("Dog", "Woof")
+var cat = Animal("Cat", "Meow")
+dog.speak()
+cat.speak()
 
-# Include statement
-include Math # to include math library
-include "examples/simple.rn" # to use a path
+var both = dog + cat
+both.speak()  # Dog&Cat says ...</code></pre>
+            </div>
+            <div class="tour-panel" id="tab-loops">
+              <pre><code class="language-radon"># Counting with a for loop
+for i = 0 to 5 {
+    print(i)
+}
 
-# builtin functions
+# While loop with a condition
+var count = 0
+while count < 3 {
+    print("tick: " + str(count))
+    count = count + 1
+}
 
-# Utility methods
-cls()
-clear()
-exit()
+# Loop with step
+for i = 0 to 10 step 2 {
+    print(i)  # 0, 2, 4, 6, 8
+}</code></pre>
+            </div>
+            <div class="tour-panel" id="tab-errors">
+              <pre><code class="language-radon">fun divide(a, b) {
+    if b == 0 {
+        raise Exception("Division by zero")
+    }
+    return a / b
+}
 
-# same as include statement
-require()
+# Wrap risky calls in try/catch
+try {
+    print(divide(10, 2))   # 5
+    print(divide(5, 0))    # raises
+} catch err {
+    print("Caught: " + str(err))
+}</code></pre>
+            </div>
+            <div class="tour-panel" id="tab-collections">
+              <pre><code class="language-radon"># Arrays
+var nums = [1, 2, 3, 4, 5]
+append(nums, 6)
+print(nums)          # [1, 2, 3, 4, 5, 6]
+print(nums[0])       # 1
 
-# Command line arguments
-sys_args()
+# Slicing
+print(nums[1:4])     # [2, 3, 4]
 
-# API methods
-pyapi(string)
+# Hash maps
+var config = {
+    "host": "localhost",
+    "port": 8080
+}
+print(config["host"])   # localhost</code></pre>
+            </div>
+            <div class="tour-panel" id="tab-pyapi">
+              <pre><code class="language-radon"># Import and use any Python module
+var os_mod = pyapi("import os; os")
+var cwd = pyapi("os.getcwd()")
+print(cwd)
 
-# Typecase methods
-int()
-float()
-str()
-bool()
-type()
+# Python's math library
+var math = pyapi("import math; math")
+print(pyapi("math.sqrt(144)"))   # 12.0
 
-# Type checker methods
-is_num()
-is_int()
-is_float()
-is_str()
-is_bool()
-is_array()
-is_fun()
+# Date and time
+var dt = pyapi("import datetime; datetime")
+print(pyapi("str(datetime.date.today())"))</code></pre>
+            </div>
+          </div>
+        </section>
 
-# String methods
-str_len()
-str_find(string, index)
-str_slice(string, start, end)
+        <section class="feature-grid" id="features">
+          <article class="panel feature-card accent-blue">
+            <div class="feature-card-icon">⚡</div>
+            <p class="eyebrow">REPL &amp; scripting</p>
+            <h3>Run code your way</h3>
+            <p>Launch an interactive REPL with <code>python radon.py</code> or run any <code>.rn</code> file directly. No build step, no config.</p>
+          </article>
+          <article class="panel feature-card accent-amber">
+            <div class="feature-card-icon">🏗️</div>
+            <p class="eyebrow">OOP</p>
+            <h3>Classes and objects</h3>
+            <p>Define classes with <code>__constructor__</code>, instance methods, and <code>this</code> — operator overloading supported out of the box.</p>
+          </article>
+          <article class="panel feature-card accent-red">
+            <div class="feature-card-icon">🛡️</div>
+            <p class="eyebrow">Error handling</p>
+            <h3>Try, catch, raise</h3>
+            <p>Structured exception handling with <code>try</code>/<code>catch</code>/<code>raise</code> lets you write robust programs without crashing the runtime.</p>
+          </article>
+          <article class="panel feature-card accent-blue">
+            <div class="feature-card-icon">🔧</div>
+            <p class="eyebrow">Built-ins</p>
+            <h3>Rich built-in functions</h3>
+            <p>Over 30 built-in helpers — <code>str_len</code>, <code>is_num</code>, <code>append</code>, <code>range</code>, <code>type</code> and more — available with no imports.</p>
+          </article>
+          <article class="panel feature-card accent-amber">
+            <div class="feature-card-icon">📦</div>
+            <p class="eyebrow">Modules</p>
+            <h3>Import system</h3>
+            <p>Use <code>import module</code> or <code>from module import name</code>. Standard library modules are plain <code>.rn</code> files you can read and modify.</p>
+          </article>
+          <article class="panel feature-card accent-red">
+            <div class="feature-card-icon">🔒</div>
+            <p class="eyebrow">Security</p>
+            <h3>Sandboxed Python bridge</h3>
+            <p>Access any Python library via <code>pyapi()</code>. The runtime can prompt the user before allowing Python, disk, or network access.</p>
+          </article>
+        </section>
 
-# I/O methods
-print()
-print_ret()
-input()
-input_int()
+        <section class="panel modules-panel" id="modules">
+          <div class="section-heading">
+            <p class="eyebrow">Standard library</p>
+            <h2>Modules currently shipped in the repo</h2>
+          </div>
+          <div class="module-grid">
+            <div><strong>argparser</strong><span>CLI argument parsing</span></div>
+            <div><strong>array</strong><span>Array utilities &amp; helpers</span></div>
+            <div><strong>colorlib</strong><span>Terminal colour output</span></div>
+            <div><strong>io</strong><span>Typed input helpers</span></div>
+            <div><strong>math</strong><span>Mathematical functions</span></div>
+            <div><strong>os</strong><span>OS &amp; filesystem access</span></div>
+            <div><strong>radiation</strong><span>Radon meta-utilities</span></div>
+            <div><strong>string</strong><span>String manipulation</span></div>
+            <div><strong>system</strong><span>Process &amp; env control</span></div>
+            <div><strong>universe</strong><span>Global constants &amp; helpers</span></div>
+            <div><strong>winlib</strong><span>Windows-specific APIs</span></div>
+          </div>
+          <p class="modules-note">
+            All modules are plain <code>.rn</code> files in the <code>stdlib/</code> folder — readable, forkable, and easy to extend.
+            See the <a href="/docs/standard-library">standard library docs</a> for full API references.
+          </p>
+        </section>
 
-# Array methods
-arr_len()
-arr_push(array, item)
-arr_pop(array, index)
-arr_append(array, item)
-arr_extend(array1, array2)
-arr_find(array, index)
-arr_slice(array, start, end)
-</pre>
-      </code>
+        <section class="panel contribute-panel" id="contribute">
+          <div class="contribute-grid">
+            <div>
+              <p class="eyebrow">Open source</p>
+              <h2>Get involved</h2>
+              <p>Radon is built in the open on GitHub. Whether you want to file a bug, write a new standard-library module, or improve the interpreter — all contributions are welcome.</p>
+              <div class="hero-actions">
+                <a class="button button-primary" href="https://github.com/radon-project/radon/issues/new">File an issue</a>
+                <a class="button button-secondary" href="https://discord.gg/C2aVE9ya6N" target="_blank" rel="noopener"><svg class="discord-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>Join Discord</a>
+                <a class="button button-secondary" href="https://github.com/radon-project/radon/pulls">Submit a PR</a>
+              </div>
+            </div>
+            <div class="contribute-links">
+              <a class="contribute-link" href="https://github.com/radon-project/radon">
+                <span class="cl-label">Source repository</span>
+                <span class="cl-desc">radon-project/radon</span>
+                <span class="cl-arrow">→</span>
+              </a>
+              <a class="contribute-link" href="/docs/contribution">
+                <span class="cl-label">Contribution guide</span>
+                <span class="cl-desc">How to set up and submit changes</span>
+                <span class="cl-arrow">→</span>
+              </a>
+              <a class="contribute-link" href="https://github.com/radon-project/radon/issues">
+                <span class="cl-label">Open issues</span>
+                <span class="cl-desc">Good first issues and bug reports</span>
+                <span class="cl-arrow">→</span>
+              </a>
+              <a class="contribute-link" href="https://github.com/radon-project/radon/blob/master/stdlib">
+                <span class="cl-label">Standard library source</span>
+                <span class="cl-desc">Written in Radon — easy to extend</span>
+                <span class="cl-arrow">→</span>
+              </a>
+              <a class="contribute-link" href="https://discord.gg/C2aVE9ya6N" target="_blank" rel="noopener">
+                <span class="cl-label"><svg class="discord-icon discord-icon--purple" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>Discord community</span>
+                <span class="cl-desc">Ask questions, share projects, get help</span>
+                <span class="cl-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Radon Software Foundation</p>
+        <p>
+          Maintained by
+          <a href="https://github.com/Almas-Ali">Md. Almas Ali</a>
+          |
+          <a href="https://github.com/radon-project/radon">GitHub</a>
+          |
+          <a href="https://discord.gg/C2aVE9ya6N" target="_blank" rel="noopener"><svg class="discord-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>Discord</a>
+        </p>
+      </footer>
     </div>
 
-    <footer>
-      <p>Radon Software Foundation &copy; 2023</p>
-      <p>
-        Author : <a href="https://almasali.net" target="_blank"
-          title="A passionate software engineer from Bangladesh.">Md. Almas Ali</a>
-      </p>
-    </footer>
+    <button class="scroll-top" id="scrollTop" aria-label="Back to top" title="^ Rn is launching!">
+      <span class="st-atom">Rn</span>
+      <span class="st-label">↑ top</span>
+    </button>
 
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
     <script>
-      window.addEventListener('load', () => {
-        const loader = document.querySelector('.loader-wrapper');
-        loader.className += ' hidden';
+      Prism.languages.radon = {
+        'comment': /#.*/,
+        'string': /"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'/,
+        'keyword': /\b(?:var|fun|class|if|elif|else|for|while|return|import|from|in|and|or|not|null|true|false|this|break|continue|try|catch|raise|end)\b/,
+        'builtin': /\b(?:print|input|str|int|float|bool|len|str_len|type|range|pyapi|is_num|is_str|is_list|is_fun|append|pop|extend)\b/,
+        'number': /\b\d+(?:\.\d+)?\b/,
+        'operator': /[+\-*\/=<>!]+|\b(?:and|or|not)\b/,
+        'punctuation': /[{}()\[\],.;:]/
+      };
+    </script>
+    <script>
+      // Scroll-to-top button
+      var stBtn = document.getElementById('scrollTop');
+      window.addEventListener('scroll', function() {
+        stBtn.classList.toggle('st-visible', window.scrollY > 400);
+      });
+      stBtn.addEventListener('click', function() {
+        stBtn.classList.add('st-launching');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setTimeout(function() { stBtn.classList.remove('st-launching'); }, 700);
       });
     </script>
-
-    <!-- Google tag (gtag.js) -->
+    <script>
+      // Syntax tour tab switcher
+      document.querySelectorAll('.tour-tab').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var tab = btn.getAttribute('data-tab');
+          document.querySelectorAll('.tour-tab').forEach(function(b) { b.classList.remove('active'); });
+          document.querySelectorAll('.tour-panel').forEach(function(p) { p.classList.remove('active'); });
+          btn.classList.add('active');
+          document.getElementById('tab-' + tab).classList.add('active');
+          Prism.highlightAllUnder(document.getElementById('tab-' + tab));
+        });
+      });
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQVZ8DQMSF"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
-
       gtag('config', 'G-EQVZ8DQMSF');
     </script>
-
   </body>
-
 </html>
