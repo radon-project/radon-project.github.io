@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./static/main.css?v=3.0.0">
+    <link rel="stylesheet" href="./static/main.css?v=4.2.0">
   </head>
   <body>
     <div class="page-shell">
@@ -37,7 +37,7 @@
           <img src="./static/Rn.svg" alt="Radon logo">
           <span>Radon</span>
         </a>
-        <nav class="site-nav" aria-label="Primary">
+        <nav class="site-nav" id="mainNav" aria-label="Primary">
           <a href="/docs">Docs</a>
           <a href="#syntax">Syntax</a>
           <a href="#features">Features</a>
@@ -45,25 +45,34 @@
           <a href="#contribute">Contribute</a>
         </nav>
         <div class="nav-ctas">
-          <a href="https://github.com/radon-project/radon" class="nav-cta-link" target="_blank" rel="noopener" aria-label="View on GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>GitHub</a>
+          <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mainNav">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+          </button>
+          <a href="https://github.com/radon-project/radon" class="nav-cta-link" target="_blank" rel="noopener" aria-label="View on GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg><span>GitHub</span></a>
           <a href="/download" class="nav-cta-primary">Download</a>
-          <a href="https://discord.gg/C2aVE9ya6N" target="_blank" rel="noopener" class="nav-cta-discord"><svg class="discord-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>Discord</a>
+          <a href="https://discord.gg/C2aVE9ya6N" target="_blank" rel="noopener" class="nav-cta-discord"><svg class="discord-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg><span>Discord</span></a>
         </div>
       </header>
 
       <main>
         <section class="hero" id="start">
           <div class="hero-copy">
-            <p class="eyebrow">Fast, clean, Python-powered</p>
+            <p class="eyebrow">Source-first • Python-powered</p>
             <h1>The Radon Programming Language</h1>
             <p class="lead">
-              Radon is a source-first programming language with its own REPL, script runner,
-              built-in runtime helpers, and standard library modules written in Radon.
+              Write clean, expressive code with built-in REPL, script runner, standard library modules,
+              classes, error handling, and safe Python interop — all from source.
             </p>
+            <div class="hero-chips">
+              <span class="chip"><span class="chip-icon">⚡</span> REPL</span>
+              <span class="chip"><span class="chip-icon">📄</span> Script runner</span>
+              <span class="chip"><span class="chip-icon">🐍</span> Python interop</span>
+              <span class="chip"><span class="chip-icon">📦</span> Standard library</span>
+            </div>
             <div class="hero-actions">
               <a class="button button-primary" href="/download">Download Radon</a>
               <a class="button button-secondary" href="/docs">Open Documentation</a>
-              <a class="button button-tertiary" href="https://github.com/radon-project/radon">View Repository</a>
+              <a class="button button-tertiary" href="https://github.com/radon-project/radon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>View Repository</a>
             </div>
             <ul class="hero-points">
               <li>Run the REPL with <code>python radon.py</code></li>
@@ -74,43 +83,53 @@
           <div class="hero-art">
             <div class="logo-orbit">
               <div class="rn-emblem" aria-label="Radon emblem">Rn</div>
-              <span class="orbit orbit-a"></span>
-              <span class="orbit orbit-b"></span>
-              <span class="version-badge">0.0.1a2</span>
+              <span class="orbit orbit-a" aria-hidden="true"></span>
+              <span class="orbit orbit-b" aria-hidden="true"></span>
+              <span class="version-badge">v0.0.1a2</span>
             </div>
           </div>
         </section>
 
-        <section class="panel command-panel">
+        <section class="panel command-panel" id="install">
           <div>
-            <p class="eyebrow">Source install</p>
+            <p class="eyebrow">Quick start</p>
             <h2>Get running in under a minute</h2>
             <p>
-              The current repository is designed to run directly from source. Clone the repo,
-              start the interpreter, and then execute examples or your own <code>.rn</code> files.
+              Clone the repository and run directly from source. No build step required —
+              just Python 3.12+ and you're ready to go.
             </p>
           </div>
-          <pre><code class="language-bash">git clone https://github.com/radon-project/radon.git
+          <div class="code-block">
+            <button class="copy-btn" aria-label="Copy to clipboard" data-copy>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+            </button>
+            <pre><code class="language-bash">git clone https://github.com/radon-project/radon.git
 cd radon
-python radon.py
-python radon.py examples/simple.rn</code></pre>
+python radon.py                      # Start REPL
+python radon.py examples/simple.rn   # Run a file</code></pre>
+          </div>
         </section>
 
         <section class="panel syntax-tour" id="syntax">
           <div class="section-heading">
             <p class="eyebrow">Language tour</p>
             <h2>Explore the syntax</h2>
+            <p>Familiar constructs, clean design. See how Radon handles classes, loops, error handling, and more.</p>
           </div>
           <div class="tour-tabs" role="tablist">
-            <button class="tour-tab active" role="tab" data-tab="classes">Classes</button>
-            <button class="tour-tab" role="tab" data-tab="loops">Loops</button>
-            <button class="tour-tab" role="tab" data-tab="errors">Error handling</button>
-            <button class="tour-tab" role="tab" data-tab="collections">Arrays &amp; maps</button>
-            <button class="tour-tab" role="tab" data-tab="pyapi">Python interop</button>
+            <button class="tour-tab active" role="tab" data-tab="classes" aria-selected="true">Classes</button>
+            <button class="tour-tab" role="tab" data-tab="loops" aria-selected="false">Loops</button>
+            <button class="tour-tab" role="tab" data-tab="errors" aria-selected="false">Error handling</button>
+            <button class="tour-tab" role="tab" data-tab="collections" aria-selected="false">Arrays &amp; maps</button>
+            <button class="tour-tab" role="tab" data-tab="pyapi" aria-selected="false">Python interop</button>
           </div>
           <div class="tour-panels">
             <div class="tour-panel active" id="tab-classes">
-              <pre><code class="language-radon">import io
+              <div class="code-block">
+                <button class="copy-btn" aria-label="Copy to clipboard" data-copy>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                </button>
+                <pre><code class="language-radon">import io
 
 class Animal {
     fun __constructor__(name, sound) {
@@ -135,9 +154,14 @@ cat.speak()
 
 var both = dog + cat
 both.speak()  # Dog&Cat says ...</code></pre>
+              </div>
             </div>
             <div class="tour-panel" id="tab-loops">
-              <pre><code class="language-radon"># Counting with a for loop
+              <div class="code-block">
+                <button class="copy-btn" aria-label="Copy to clipboard" data-copy>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                </button>
+                <pre><code class="language-radon"># Counting with a for loop
 for i = 0 to 5 {
     print(i)
 }
@@ -153,9 +177,14 @@ while count < 3 {
 for i = 0 to 10 step 2 {
     print(i)  # 0, 2, 4, 6, 8
 }</code></pre>
+              </div>
             </div>
             <div class="tour-panel" id="tab-errors">
-              <pre><code class="language-radon">fun divide(a, b) {
+              <div class="code-block">
+                <button class="copy-btn" aria-label="Copy to clipboard" data-copy>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                </button>
+                <pre><code class="language-radon">fun divide(a, b) {
     if b == 0 {
         raise Exception("Division by zero")
     }
@@ -169,9 +198,14 @@ try {
 } catch err {
     print("Caught: " + str(err))
 }</code></pre>
+              </div>
             </div>
             <div class="tour-panel" id="tab-collections">
-              <pre><code class="language-radon"># Arrays
+              <div class="code-block">
+                <button class="copy-btn" aria-label="Copy to clipboard" data-copy>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                </button>
+                <pre><code class="language-radon"># Arrays
 var nums = [1, 2, 3, 4, 5]
 append(nums, 6)
 print(nums)          # [1, 2, 3, 4, 5, 6]
@@ -186,9 +220,14 @@ var config = {
     "port": 8080
 }
 print(config["host"])   # localhost</code></pre>
+              </div>
             </div>
             <div class="tour-panel" id="tab-pyapi">
-              <pre><code class="language-radon"># Import and use any Python module
+              <div class="code-block">
+                <button class="copy-btn" aria-label="Copy to clipboard" data-copy>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                </button>
+                <pre><code class="language-radon"># Import and use any Python module
 var os_mod = pyapi("import os; os")
 var cwd = pyapi("os.getcwd()")
 print(cwd)
@@ -200,6 +239,7 @@ print(pyapi("math.sqrt(144)"))   # 12.0
 # Date and time
 var dt = pyapi("import datetime; datetime")
 print(pyapi("str(datetime.date.today())"))</code></pre>
+              </div>
             </div>
           </div>
         </section>
@@ -311,19 +351,16 @@ print(pyapi("str(datetime.date.today())"))</code></pre>
       </main>
 
       <footer class="site-footer">
-        <p>Radon Software Foundation</p>
-        <p>
-          Maintained by
-          <a href="https://github.com/Almas-Ali">Md. Almas Ali</a>
-          |
+        <p>Radon Software Foundation · Maintained by <a href="https://github.com/Almas-Ali">Md. Almas Ali</a></p>
+        <div class="footer-links">
           <a href="https://github.com/radon-project/radon">GitHub</a>
-          |
-          <a href="https://discord.gg/C2aVE9ya6N" target="_blank" rel="noopener"><svg class="discord-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>Discord</a>
-        </p>
+          <a href="/docs">Docs</a>
+          <a href="https://discord.gg/C2aVE9ya6N" target="_blank" rel="noopener">Discord</a>
+        </div>
       </footer>
     </div>
 
-    <button class="scroll-top" id="scrollTop" aria-label="Back to top" title="^ Rn is launching!">
+    <button class="scroll-top" id="scrollTop" aria-label="Back to top" title="Back to top">
       <span class="st-atom">Rn</span>
       <span class="st-label">↑ top</span>
     </button>
@@ -331,10 +368,11 @@ print(pyapi("str(datetime.date.today())"))</code></pre>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-core.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
     <script>
+      // Radon language syntax highlighting
       Prism.languages.radon = {
         'comment': /#.*/,
         'string': /"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'/,
-        'keyword': /\b(?:var|fun|class|if|elif|else|for|while|return|import|from|in|and|or|not|null|true|false|this|break|continue|try|catch|raise|end)\b/,
+        'keyword': /\b(?:var|fun|class|if|elif|else|for|while|return|import|from|in|and|or|not|null|true|false|this|break|continue|try|catch|raise|end|to|step)\b/,
         'builtin': /\b(?:print|input|str|int|float|bool|len|str_len|type|range|pyapi|is_num|is_str|is_list|is_fun|append|pop|extend)\b/,
         'number': /\b\d+(?:\.\d+)?\b/,
         'operator': /[+\-*\/=<>!]+|\b(?:and|or|not)\b/,
@@ -342,29 +380,85 @@ print(pyapi("str(datetime.date.today())"))</code></pre>
       };
     </script>
     <script>
-      // Scroll-to-top button
-      var stBtn = document.getElementById('scrollTop');
-      window.addEventListener('scroll', function() {
-        stBtn.classList.toggle('st-visible', window.scrollY > 400);
-      });
-      stBtn.addEventListener('click', function() {
-        stBtn.classList.add('st-launching');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        setTimeout(function() { stBtn.classList.remove('st-launching'); }, 700);
-      });
-    </script>
-    <script>
-      // Syntax tour tab switcher
-      document.querySelectorAll('.tour-tab').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          var tab = btn.getAttribute('data-tab');
-          document.querySelectorAll('.tour-tab').forEach(function(b) { b.classList.remove('active'); });
-          document.querySelectorAll('.tour-panel').forEach(function(p) { p.classList.remove('active'); });
-          btn.classList.add('active');
-          document.getElementById('tab-' + tab).classList.add('active');
-          Prism.highlightAllUnder(document.getElementById('tab-' + tab));
+      (function() {
+        // Mobile menu toggle
+        var menuToggle = document.getElementById('menuToggle');
+        var mainNav = document.getElementById('mainNav');
+        if (menuToggle && mainNav) {
+          menuToggle.addEventListener('click', function() {
+            var isOpen = mainNav.classList.toggle('nav-open');
+            menuToggle.setAttribute('aria-expanded', isOpen);
+          });
+          // Close menu when clicking outside
+          document.addEventListener('click', function(e) {
+            if (!menuToggle.contains(e.target) && !mainNav.contains(e.target)) {
+              mainNav.classList.remove('nav-open');
+              menuToggle.setAttribute('aria-expanded', 'false');
+            }
+          });
+        }
+        
+        // Scroll-to-top button
+        var stBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function() {
+          stBtn.classList.toggle('st-visible', window.scrollY > 400);
         });
-      });
+        stBtn.addEventListener('click', function() {
+          stBtn.classList.add('st-launching');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          setTimeout(function() { stBtn.classList.remove('st-launching'); }, 700);
+        });
+        
+        // Copy to clipboard buttons
+        document.querySelectorAll('.copy-btn').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var codeBlock = btn.closest('.code-block');
+            var code = codeBlock.querySelector('code');
+            if (code) {
+              navigator.clipboard.writeText(code.textContent).then(function() {
+                btn.classList.add('copied');
+                setTimeout(function() { btn.classList.remove('copied'); }, 2000);
+              });
+            }
+          });
+        });
+        
+        // Syntax tour tab switcher
+        document.querySelectorAll('.tour-tab').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var tab = btn.getAttribute('data-tab');
+            document.querySelectorAll('.tour-tab').forEach(function(b) {
+              b.classList.remove('active');
+              b.setAttribute('aria-selected', 'false');
+            });
+            document.querySelectorAll('.tour-panel').forEach(function(p) {
+              p.classList.remove('active');
+            });
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+            var panel = document.getElementById('tab-' + tab);
+            panel.classList.add('active');
+            Prism.highlightAllUnder(panel);
+          });
+        });
+        
+        // Active nav link highlighting on scroll
+        var sections = document.querySelectorAll('section[id]');
+        var navLinks = document.querySelectorAll('.site-nav a[href^="#"]');
+        window.addEventListener('scroll', function() {
+          var scrollPos = window.scrollY + 150;
+          sections.forEach(function(section) {
+            if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+              navLinks.forEach(function(link) {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + section.id) {
+                  link.classList.add('active');
+                }
+              });
+            }
+          });
+        });
+      })();
     </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQVZ8DQMSF"></script>
     <script>
