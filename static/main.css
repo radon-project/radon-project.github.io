@@ -85,41 +85,126 @@ code:not(pre code) {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 1.5rem;
     padding: 0.75rem 0 1.5rem;
 }
 
 .brand {
     display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: 0.7rem;
     color: var(--navy);
     text-decoration: none;
     font-weight: 700;
     font-size: 1.1rem;
+    flex-shrink: 0;
 }
 
 .brand img {
-    width: 2.8rem;
-    height: 2.8rem;
+    width: 2.6rem;
+    height: 2.6rem;
 }
 
+/* Center navigation links */
 .site-nav {
     display: flex;
     align-items: center;
-    gap: 0.35rem;
-    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .site-nav a {
     color: var(--navy);
     text-decoration: none;
-    padding: 0.7rem 1rem;
+    padding: 0.5rem 0.85rem;
     border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color 0.2s, background 0.2s;
 }
 
 .site-nav a:hover {
-    background: rgba(22, 25, 61, 0.08);
+    color: var(--blue);
+    background: rgba(53, 87, 212, 0.06);
+}
+
+/* Right CTA group */
+.nav-ctas {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+}
+
+/* GitHub link - subtle utility */
+.nav-cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--navy);
+    text-decoration: none;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+    opacity: 0.75;
+}
+
+.nav-cta-link:hover {
+    opacity: 1;
+    background: rgba(22, 25, 61, 0.06);
+}
+
+.nav-cta-link svg {
+    width: 1.1em;
+    height: 1.1em;
+    fill: currentColor;
+}
+
+/* Download - Primary CTA */
+.nav-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--blue);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.55rem 1.1rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(53, 87, 212, 0.25);
+}
+
+.nav-cta-primary:hover {
+    background: #2a47b8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(53, 87, 212, 0.35);
+}
+
+/* Discord - Secondary community CTA */
+.nav-cta-discord {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: rgba(88, 101, 242, 0.1);
+    color: #5865f2;
+    text-decoration: none;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.nav-cta-discord:hover {
+    background: rgba(88, 101, 242, 0.18);
+}
+
+.nav-cta-discord .discord-icon {
+    fill: #5865f2;
 }
 
 /* Discord SVG icon — inline in links and buttons */
@@ -128,10 +213,9 @@ code:not(pre code) {
     height: 1em;
     fill: #5865f2;
     vertical-align: -0.15em;
-    margin-right: 0.35em;
+    margin-right: 0.3em;
     flex-shrink: 0;
 }
-.nav-discord { display: inline-flex; align-items: center; }
 .button .discord-icon { width: 1.1em; height: 1.1em; vertical-align: -0.2em; }
 .discord-icon--purple { fill: #5865f2; }
 .cl-label { display: inline-flex; align-items: center; gap: 0.4em; }
@@ -206,6 +290,18 @@ code:not(pre code) {
     color: var(--navy);
     background: rgba(255, 255, 255, 0.8);
     box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.button-tertiary {
+    color: var(--navy);
+    background: transparent;
+    opacity: 0.7;
+    font-weight: 500;
+}
+
+.button-tertiary:hover {
+    opacity: 1;
+    background: rgba(22, 25, 61, 0.05);
 }
 
 .hero-points,
