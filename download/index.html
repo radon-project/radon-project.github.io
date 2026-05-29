@@ -871,6 +871,67 @@
           transform: none;
         }
       }
+
+      /* Binary asset chips */
+      .release-assets {
+        margin-top: 1.25rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .release-assets-label {
+        font-size: 0.72rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: rgba(28, 22, 64, 0.45);
+        margin: 0 0 0.6rem;
+      }
+
+      .release-assets-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .asset-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.4rem 0.85rem;
+        border-radius: var(--radius-full);
+        background: var(--surface-soft);
+        border: 1px solid var(--line);
+        text-decoration: none;
+        color: var(--navy);
+        font-size: 0.83rem;
+        white-space: nowrap;
+        transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      }
+
+      .asset-chip:hover {
+        border-color: var(--blue);
+        box-shadow: 0 2px 8px rgba(53, 87, 212, 0.12);
+        background: rgba(53, 87, 212, 0.04);
+      }
+
+      .asset-chip:focus-visible {
+        outline: 2px solid var(--blue);
+        outline-offset: 2px;
+      }
+
+      .asset-chip-name {
+        font-family: var(--font-mono);
+        font-size: 0.79rem;
+        font-weight: 500;
+      }
+
+      .asset-chip-size {
+        font-size: 0.72rem;
+        color: rgba(28, 22, 64, 0.45);
+        padding-left: 0.35rem;
+        border-left: 1px solid var(--line);
+      }
     </style>
   </head>
   <body>
@@ -1203,6 +1264,43 @@ python radon.py</code></pre>
         return release.prerelease || release.tag_name.includes('alpha') || release.tag_name.includes('beta') || release.tag_name.includes('rc');
       }
 
+      function formatBytes(bytes) {
+        if (!bytes || bytes === 0) return '';
+        const k = 1024;
+        const sizes = ['B', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + '\u00a0' + sizes[i];
+      }
+
+      function getAssetIcon(name) {
+        const n = name.toLowerCase();
+        if (n.endsWith('.exe') || n.endsWith('.msi')) return '\uD83E\uDE9F'; // 🪟
+        if (n.endsWith('.dmg') || n.endsWith('.pkg')) return '\uD83C\uDF4E'; // 🍎
+        if (n.endsWith('.deb') || n.endsWith('.rpm') || n.endsWith('.appimage')) return '\uD83D\uDC27'; // 🐧
+        if (n.endsWith('.vsix')) return '\uD83E\uDDF9'; // 🧩
+        return '\uD83D\uDCC4'; // 📄
+      }
+
+      function renderAssetChips(assets) {
+        if (!assets || assets.length === 0) return '';
+        return `
+          <div class="release-assets">
+            <p class="release-assets-label">Binary assets</p>
+            <div class="release-assets-list">
+              ${assets.map(a => `
+                <a class="asset-chip"
+                   href="${a.browser_download_url}"
+                   title="${a.name}${a.size ? ' \u00b7 ' + formatBytes(a.size) : ''}">
+                  <span>${getAssetIcon(a.name)}</span>
+                  <span class="asset-chip-name">${a.name}</span>
+                  ${a.size ? `<span class="asset-chip-size">${formatBytes(a.size)}</span>` : ''}
+                </a>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+
       function renderLatestRelease(release) {
         const container = document.getElementById('latest-release-content');
         const heroVersion = document.getElementById('hero-version');
@@ -1230,6 +1328,7 @@ python radon.py</code></pre>
               <span class="release-meta-chip">${isPre ? '🧪 Alpha release' : '✓ Stable release'}</span>
               <span class="release-meta-chip">📦 Source archive</span>
               <span class="release-meta-chip">🐍 Python-powered</span>
+              ${release.assets.length > 0 ? `<span class="release-meta-chip">📎 ${release.assets.length} binary asset${release.assets.length !== 1 ? 's' : ''}</span>` : ''}
             </div>
             <div class="release-body">${bodyHtml}</div>
             <div class="release-actions">
@@ -1237,6 +1336,7 @@ python radon.py</code></pre>
               <a class="button button-secondary" href="${release.tarball_url}">Download TAR</a>
               <a class="button button-tertiary" href="${release.html_url}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="width:1em;height:1em;fill:currentColor;margin-right:0.35em;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>View on GitHub</a>
             </div>
+            ${renderAssetChips(release.assets)}
           </div>
         `;
       }
@@ -1261,6 +1361,7 @@ python radon.py</code></pre>
                 <span class="release-row-date">${formatDate(release.published_at)}</span>
               </div>
               <div class="release-row-actions">
+                ${(release.assets || []).map(a => `<a class="button button-secondary" href="${a.browser_download_url}" title="${a.name}${a.size ? ' \u00b7 ' + formatBytes(a.size) : ''}">${getAssetIcon(a.name)} ${a.name}</a>`).join('')}
                 <a class="button button-primary" href="${release.zipball_url}" title="Download ZIP archive">ZIP</a>
                 <a class="button button-secondary" href="${release.tarball_url}" title="Download TAR archive">TAR</a>
                 <a class="button button-tertiary" href="${release.html_url}" target="_blank" rel="noopener" title="View on GitHub">View</a>
